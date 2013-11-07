@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<input id="edValue" type="text" onKeyPress="edValueKeyPress() "onKeyUp="edValueKeyPress()">
+	<span id="string">Original text: </span>
+	<p id="lblValue">The SHA256 hash is:  </p>
+	
+<script type="text/javascript" src="sha256.js">
+</script>
+
+<script type="text/javascript">
+	function edValueKeyPress()
+    {
+        var edValue = document.getElementById("edValue");
+        var s = edValue.value;
+
+        var lblValue = document.getElementById("lblValue");
+        lblValue.innerText = "The SHA256 hash is: "+sha256_digest(s);
+        
+        var TheText = document.getElementById("string");
+        TheText.innerText = "Original text: "+s;
+        
+
+        //var s = $("#edValue").val();
+        //$("#lblValue").text(s);    
+    }
+// <!--
+//   document.write(sha256_digest("any message"));
+// //-->
+
+
+</script>
+
+</body>
+</html>
