@@ -1,35 +1,101 @@
 <!DOCTYPE html>
+<title>Real Time sha256 encoder</title>
 <html>
 <body>
-	<input id="edValue" type="text" onKeyPress="edValueKeyPress() "onKeyUp="edValueKeyPress()">
-	<span id="string">Original text: </span>
+    <style>
+		p.chkbox {text-align:left;}
+    </style>
+    <label class="chkbox">Hide</label>
+	<input 
+		name="show password"
+		type="checkbox"
+		onclick="toggleType();" 
+		onclick="repeat();"/>
+	<input 
+		size="80"
+		input type="text"
+		rows="7"
+		id="edValue" 
+		type="text" 
+		onKeyPress="edValueKeyPress() 
+		"onKeyUp="edValueKeyPress()">
+	<p id="string">Original text: </p>
 	<p id="lblValue">The SHA256 hash is:  </p>
-	
-<script type="text/javascript" src="javascripts/sha256.js">
-</script>
 
+<script type="text/javascript" src="sha256.js">
+</script>
+<body>                            
+    <input id="browseOpen" type="file"/>
+ 
+    <script type="text/javascript">
+        var fileInput = document.getElementById("browseOpen");
+        fileInput.onchange = function () {            
+            var fr = new FileReader();
+            fr.onloadend = function () {
+                var result = this.result;
+                //alert(sha256_digest(result));
+                var TheText = document.getElementById("string");
+				TheText.innerText = "File Contents: "+result;
+                var lblValue = document.getElementById("lblValue");
+				lblValue.innerText = "The SHA256 hash is: "+sha256_digest(result);
+            };
+            fr.readAsBinaryString(this.files[0]);
+        };
+    </script>
+</body>
 <script type="text/javascript">
 	function edValueKeyPress()
-    {
-        var edValue = document.getElementById("edValue");
-        var s = edValue.value;
+	{
+		var edValue = document.getElementById("edValue");
+		var s = edValue.value;
 
-        var lblValue = document.getElementById("lblValue");
-        lblValue.innerText = "The SHA256 hash is: "+sha256_digest(s);
-        
-        var TheText = document.getElementById("string");
-        TheText.innerText = "Original text: "+s;
-        
+		var lblValue = document.getElementById("lblValue");
+		lblValue.innerText = "The SHA256 hash is: "+sha256_digest(s);
+	
+		var TheText = document.getElementById("string");
+		TheText.innerText = "Original text: "+s;
+	  
+	}
 
-        //var s = $("#edValue").val();
-        //$("#lblValue").text(s);    
-    }
-// <!--
-//   document.write(sha256_digest("any message"));
-// //-->
+	function toggleType() {
+		var obj = document.getElementById('edValue');
+		if (obj.type == 'password') {
+			obj.type = 'text';
+		} else {
+			obj.type = 'password';
+			document.getElementById('string').style.visibility="hidden";
+		}
+	}
 
 
 </script>
+</script>
+<div style="float: right;">
+	 <a 
+		href="https://twitter.com/share"
+		class="twitter-share-button" 
+		data-url="http://kylelk.github.io/html-examples/sha256.html" 
+		data-text="Real Time sha256 encoder" 
+		data-via="kerseykyle" 
+		data-related="kerseykyle" 
+		data-hashtags="sha256">Tweet</a>
+	<!-- 
+<style>
+			p.twitter-share-button {text-align:right;}
+	 </style>
+ -->
+	<script>
+		!function(d,s,id){
+			var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
+			if(!d.getElementById(id)){
+				js=d.createElement(s);
+				js.id=id;js.src=p+'://platform.twitter.com/widgets.js';
+				fjs.parentNode.insertBefore(js,fjs);
+			}
+		}
+		(document, 'script', 'twitter-wjs');
+	</script>
+</div>
 
 </body>
 </html>
