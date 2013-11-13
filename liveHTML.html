@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<title>Live HTML tester</title>
+<h1 id="Pagetitle">Live HTML tester</h1>
+<html>
+    <head>
+    </head>
+    
+<style>
+h1
+{
+	text-align: center;
+}
+textarea
+{
+	vertical-align: top;
+	width:100%;
+	
+}
+iframe
+{
+	vertical-align: bottom;
+	width:100%;
+}
+</style>
+<body>
+    <textarea 
+    	rows="20" 
+    	id="HTMLdata" 
+    	onKeyPress="edValueKeyPress() 
+		"onKeyUp="edValueKeyPress()">
+	</textarea>
+    <iframe id="test_iframe" src="about:blank" width="100%" height=400></iframe>
+</body>
+
+<script language="javascript">
+	function edValueKeyPress(){
+		var edValue = document.getElementById("HTMLdata");
+		var html_string = edValue.value;
+
+		//step 1: get the DOM object of the iframe.
+		var iframe = document.getElementById('test_iframe');
+
+		var iframedoc = iframe.document;
+			if (iframe.contentDocument)
+				iframedoc = iframe.contentDocument;
+			else if (iframe.contentWindow)
+				iframedoc = iframe.contentWindow.document;
+
+		 if (iframedoc){
+			 // Put the content in the iframe
+			 iframedoc.open();
+			 iframedoc.writeln(html_string);
+			 iframedoc.close();
+		 } else {
+			//just in case of browsers that don't support the above 3 properties.
+			//fortunately we don't come across such case so far.
+			alert('Cannot inject dynamic contents into iframe.');
+		 }
+
+	}
+
+</script>
+<div style="float: bottom;">
+	<a 
+	href="https://twitter.com/share" 
+	class="twitter-share-button" 
+	data-via="KerseyKyle" 
+	data-url="http://kylelk.github.io/html-examples/liveHTML.html" 
+	data-related="kerseykyle" 
+	data-hashtags="HTML">Tweet</a>
+	<script>
+		! function (d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0],
+				p = /^http:/.test(d.location) ? 'http' : 'https';
+			if (!d.getElementById(id)) {
+				js = d.createElement(s);
+				js.id = id;
+				js.src = p + '://platform.twitter.com/widgets.js';
+				fjs.parentNode.insertBefore(js, fjs);
+			}
+		}(document, 'script', 'twitter-wjs');
+	</script>
+</div>
+</html>
