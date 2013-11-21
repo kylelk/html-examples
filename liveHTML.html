@@ -8,56 +8,67 @@
 <style>
 h1
 {
-	text-align: center;
+    text-align: center;
 }
 textarea
 {
-	vertical-align: top;
-	width:100%;
-	
+    vertical-align: top;
+    width:100%;
+    
 }
 iframe
 {
-	vertical-align: bottom;
-	width:100%;
+    vertical-align: bottom;
+    width:100%;
 }
 </style>
 <body>
+    <input id="browseOpen" type="file"/>
     <textarea 
-    	rows="20" 
-    	id="HTMLdata" 
-    	onKeyPress="edValueKeyPress() 
-		"onKeyUp="edValueKeyPress()">
-	</textarea>
+        rows="20" 
+        id="HTMLdata"
+        placeholder="Enter HTML code"
+        onKeyPress="edValueKeyPress() 
+        "onKeyUp="edValueKeyPress()">
+    </textarea>
     <iframe id="test_iframe" src="about:blank" width="100%" height=400></iframe>
 </body>
 
 <script language="javascript">
-	function edValueKeyPress(){
-		var edValue = document.getElementById("HTMLdata");
-		var html_string = edValue.value;
+    var fileInput = document.getElementById("browseOpen");
+    fileInput.onchange = function() {
+        var fr = new FileReader();
+        fr.onloadend = function() {
+            var result = this.result;
+            html_string = result;
+            //alert(result);
+            var TheText = document.getElementById("HTMLdata");
+            TheText.innerText=result;
+            edValueKeyPress();
+        };
+        fr.readAsBinaryString(this.files[0]);
+    };
+    function edValueKeyPress(){
+        var edValue = document.getElementById("HTMLdata");
+        var html_string = edValue.value;
 
-		//step 1: get the DOM object of the iframe.
-		var iframe = document.getElementById('test_iframe');
+        var iframe = document.getElementById('test_iframe');
 
-		var iframedoc = iframe.document;
-			if (iframe.contentDocument)
-				iframedoc = iframe.contentDocument;
-			else if (iframe.contentWindow)
-				iframedoc = iframe.contentWindow.document;
+        var iframedoc = iframe.document;
+            if (iframe.contentDocument)
+                iframedoc = iframe.contentDocument;
+            else if (iframe.contentWindow)
+                iframedoc = iframe.contentWindow.document;
 
-		 if (iframedoc){
-			 // Put the content in the iframe
-			 iframedoc.open();
-			 iframedoc.writeln(html_string);
-			 iframedoc.close();
-		 } else {
-			//just in case of browsers that don't support the above 3 properties.
-			//fortunately we don't come across such case so far.
-			alert('Cannot inject dynamic contents into iframe.');
-		 }
+         if (iframedoc){
+             iframedoc.open();
+             iframedoc.writeln(html_string);
+             iframedoc.close();
+         } else {
+            alert('Cannot inject dynamic contents into iframe.');
+         }
 
-	}
+    }
 
 </script>
 <div style="float: bottom;">
