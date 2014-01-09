@@ -3,8 +3,10 @@
     <head>
         <title>Android Detect</title>
         <script type="text/javascript">
-            if(navigator.userAgent.match(/Android/i){
-                 document.getElementById("RunButton").style.display="visible";
+            var ua = navigator.userAgent.toLowerCase();
+            var isAndroid = ua.indexOf("android") > -1;
+            if(isAndroid) {
+                document.getElementById("RunButton").style.display="visible";
                }
         </script>
     </head>
