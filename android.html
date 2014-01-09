@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Android Detect</title>
+        <script type="text/javascript">
+            var ua = navigator.userAgent.toLowerCase();
+            var isAndroid = ua.indexOf("android")>-1;
+            if(isAndroid) {
+                 document.getElementById("RunButton").style.display="visible";
+            }
+        </script>
+    </head>
+    <body>
+        <div id="RunButton" style="display:none">
+            <button>Run With Qpython</button>
+        </div>
+    </body>
+</html>
