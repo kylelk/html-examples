@@ -1,29 +1,11 @@
-<!DOCTYPE html>
-<script>
-	var header = '\<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"\>\</script\> \n'+
-	'\<script type="text/javascript" src="http://balupton.github.com/jquery-syntaxhighlighter/scripts/jquery.syntaxhighlighter.min.js"\></script\> \n'+
-	'<script type="text/javascript"\>$.SyntaxHighlighter.init({\'lineNumbers\':true});<\/script>\n<body>\n<pre class="highlight"> \n';
-	var footer = '\n </pre>\n</body>';
-	
-    function escapeHtml(unsafe) {
-        return unsafe.replace(/&/g, '&amp;').replace(/>/g, '&gt;').replace(/</g, '&lt;').replace(/"/g, '&quot;').replace(/'/g, '&apos;');
-    }
-    function encodePythonSource(){
-        var pythonSource = document.getElementById("pythonSource").value;
-        var encodedSource = encodeURIComponent(pythonSource);
-        var buttonCode = '<br>\n<button href"python://'+encodedSource+'">Run with Qpython</button> \n';
-        var htmlEscaped = escapeHtml(pythonSource);
-        var outputCode = buttonCode+header+htmlEscaped+footer;
-        document.getElementById("encodedOutput").value=outputCode;
-    }
-</script>
-<html>
-    <body>
-        <br>
-        <textarea id="pythonSource" rows="10" cols="50"></textarea>
-        <br>
-        <textarea id="encodedOutput" rows="4" cols="50" readonly></textarea>
-        <br>
-        <button onClick="encodePythonSource()">Create Embedded Code</button>
-    </body>
-</html>
+<br>
+<button href"python://print%20%22hello%20world%22%0A">Run with Qpython</button> 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script> 
+<script type="text/javascript" src="http://balupton.github.com/jquery-syntaxhighlighter/scripts/jquery.syntaxhighlighter.min.js"></script> 
+<script type="text/javascript">$.SyntaxHighlighter.init({'lineNumbers':true});</script>
+<body>
+<pre class="highlight"> 
+print &quot;hello world&quot;
+
+ </pre>
+</body>
