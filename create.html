@@ -1,9 +1,12 @@
 <!DOCTYPE html>
+<head>
+    <title>Qpython Run Button Maker</title>
+</head>
 <script>
 	var header = '\<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"\>\</script\> \n'+
 	'\<script type="text/javascript" src="http://balupton.github.com/jquery-syntaxhighlighter/scripts/jquery.syntaxhighlighter.min.js"\></script\> \n'+
 	'<script type="text/javascript"\>$.SyntaxHighlighter.init({\'lineNumbers\':true});<\/script>\n<body>\n<pre class="highlight"> \n';
-	var footer = '\n </pre>\n</body>';
+	var footer = '\n</pre>\n</body>';
 	
     function escapeHtml(unsafe) {
         return unsafe.replace(/&/g, '&amp;').replace(/>/g, '&gt;').replace(/</g, '&lt;').replace(/"/g, '&quot;').replace(/'/g, '&apos;');
@@ -19,10 +22,12 @@
 </script>
 <html>
     <body>
+        <p>
+        Paste your python code into the text area then hit the button
+        </p>
+        <textarea id="pythonSource" rows="25" cols="100" placeholder="python code"></textarea>
         <br>
-        <textarea id="pythonSource" rows="10" cols="50"></textarea>
-        <br>
-        <textarea id="encodedOutput" rows="4" cols="50" readonly></textarea>
+        <textarea id="encodedOutput" rows="4" cols="100" readonly></textarea>
         <br>
         <button onClick="encodePythonSource()">Create Embedded Code</button>
     </body>
