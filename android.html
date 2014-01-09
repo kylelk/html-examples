@@ -1,18 +1,18 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Android Detect</title>
-        <script type="text/javascript">
-            var ua = navigator.userAgent.toLowerCase();
-            var isAndroid = ua.indexOf("android") > -1;
-            if(isAndroid) {
-                document.getElementById("RunButton").style.display="visible";
-               }
-        </script>
-    </head>
-    <body>
-        <div id="RunButton" style="display:none">
-            <button href="python://print%20%22hello%20world%22%0A">Run With Qpython</button>
-        </div>
-    </body>
-</html>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://balupton.github.com/jquery-syntaxhighlighter/scripts/jquery.syntaxhighlighter.min.js"></script>
+<script type="text/javascript">$.SyntaxHighlighter.init({'lineNumbers':false});</script>
+<body>
+<pre class="highlight">
+// Define our Function
+function checkMeaningOfLife ( decimal, success ) {
+if ( parseInt(decimal,10)=== 42 ) {
+window.console.log(success);
+}
+};
+// Define our Variables
+var str = 'The meaning of life is true',
+decimal = 42.00;
+// Fire our Function
+checkMeaningOfLife(decimal,success);
+</pre>
+</body>
