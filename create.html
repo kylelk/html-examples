@@ -11,7 +11,7 @@
     function encodePythonSource(){
         var pythonSource = document.getElementById("pythonSource").value;
         var encodedSource = encodeURIComponent(pythonSource);
-        var buttonCode = '<br>\n<button href"python://'+encodedSource+'">Run with Qpython</button> \n';
+        var buttonCode = '<br>\n<FORM METHOD="LINK" ACTION="python://'+encodedSource+'"><INPUT TYPE="submit" VALUE="Run With Qpython"></FORM>';
         var htmlEscaped = escapeHtml(pythonSource);
         var outputCode = buttonCode+header+htmlEscaped+footer;
         document.getElementById("encodedOutput").value=outputCode;
