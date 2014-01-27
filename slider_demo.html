@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<style>
+    .outer-area {
+        background-color:#C0C0C0;
+        height:100%;
+        width:100%;
+    }    
+    .touch-area {
+        background-color:white;
+        margin: auto;
+        position: absolute;
+        bottom:10%;
+        left:10%;
+        top:10%;
+        right:10%;
+    }
+    .slider {
+        width:90%;
+        margin-top:7%;
+        margin-bottom:7%;
+        margin-right:5%;
+        margin-left:5%;
+    }
+    .slider-value {
+        text-align:center;
+    }
+</style>
+<body class="outer-area">
+    <div class="touch-area">
+            <input type="range" class="slider" name="slider" id="slider-1" value="0" min="0" max="255">
+            <br>
+            <div class="slider-value" id="slider-value-1">0</div>
+            <br>
+            <input type="range" class="slider" name="slider" id="slider-2" value="0" min="0" max="255">
+            <br>
+            <div class="slider-value" id="slider-value-2">0</div>
+            <br>
+            <input type="range" class="slider" name="slider" id="slider-3" value="0" min="0" max="255">
+            <br>
+            <div class="slider-value" id="slider-value-3">0</div>  
+    </div>        
+</body>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"/>
+<script>
+$('touch-area').change(function() {
+    var slider_value_1 = $('#slider-1').val();
+    var slider_value_2 = $('#slider-2').val();
+    var slider_value_3 = $('#slider-3').val();
+    $('slider-value-1').text(slider_value_1);
+    $('slider-value-2').text(slider_value_2);
+    $('slider-value-3').text(slider_value_3);    
+}
+</script>
