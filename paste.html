@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>$.getJSON("https://graph.facebook.com/btaylor", 
+<script>
+var myjson;
+$.getJSON("http://127.0.0.1:8080/horizon-update", function(json){
+    myjson = json;
+    var data = myjson;
+   for (var key in data) {
+    if (data.hasOwnProperty(key)) { // this will check if key is owned by data object and not by any of it's ancestors
+        alert(key+': '+data[key]); // this will show each key with it's value
+    }
+}
+});
+</script>

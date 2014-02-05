@@ -1,29 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
-   <head>
-   <style type="text/css">
-   #codeTextarea{
-      width:500px;
-      height:510px;
-   }
-   .textAreaWithLines{
-      font-family:courier;      
-      border:1px solid #F00;
-      
-   }
-   .textAreaWithLines textarea,.textAreaWithLines div{
-      border:0px;
-      line-height:120%;
-      font-size:12px;
-   }
-   .lineObj{
-      color:red;
-   }
-   </style>
-   
-   <script type="text/javascript">
-   
-   var lineObjOffsetTop = 2;
+ var lineObjOffsetTop = 2;
    
    function createTextAreaWithLines(id)
    {
@@ -71,18 +46,3 @@
       
    }
    
-   </script>
-   
-   </head>   
-   <body>
-   <form>
-   <textarea id="codeTextarea">
-   
-   
-   </textarea>
-   </form>
-   <script type="text/javascript">
-   createTextAreaWithLines('codeTextarea');
-   </script>
-   </body>
-</html>
