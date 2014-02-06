@@ -70,7 +70,7 @@
     function createJSON(){
         var properties = new Object();
         properties.data = $('#paste-data').val();
-        properties.name = $('#paste-name').val();
+        properties.name = $('#name').val();
         properties.language = $("#language").val();
         properties.discription = $("#discription").val();
         var paste_data_to_send = JSON.stringify(properties);
