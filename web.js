@@ -104,11 +104,11 @@
             path.style("stroke-opacity", function(o) {
                 return o.source === d || o.target === d ? 1 : opacity;
             });
-            if (opacity == .1){
-                image.attr("width", 40).attr("height", 40);
-            }else{
-                image.attr("width", 20).attr("height", 20);
-            } 
+//            if (opacity == .1){
+//                image.attr("width", 40).attr("height", 40);
+//            }else{
+//                image.attr("width", 20).attr("height", 20);
+//            } 
         };
     }
 
