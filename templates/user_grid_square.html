@@ -1,0 +1,47 @@
+
+<div id="light" class="white_show">
+    <div id="popover_info_for_{{screen_name}}" style="display: none;" class="popover_info_for_{{screen_name}}">
+        <div style="width:256px;">
+            <img class="profile-photo" src="{{profile_image_url}}"></img>
+            <p>{{description}}</p>
+            <div style="width:256px;">
+                <div class="tweet-stats">
+                    <b>{{statuses_count}}</b><br>
+                    <span>Tweets<span>
+                </div>
+                <div class="tweet-stats">
+                    <b>{{followers_count}}</b><br>
+                    <span>Followers<span>
+                </div>
+                <div class="tweet-stats">
+                    <b>{{friends_count}}</b><br>
+                    <span>Following<span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="img-with-text">
+        <a href="{{path to profile page}}"><img class="profile-image" src="{{profile image}}"/></a>
+    </div>
+        <a href="#" 
+        class="popover_for_{{screen_name}}" 
+        id="popover_for_{{screen_name}}"
+        contentwrapper=".popover_info_for_{{screen_name}}" 
+        data-toggle="popover_for_{{screen_name}}">{{screen_name}}</a>
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $(".popover_for_{{screen_name}}").popover({
+                placement : 'auto',
+                html : true,
+                title : "{{name}}",
+                container: 'body',
+                content:function(){
+                    return $('.popover_info_for_{{screen_name}}').html();
+                }
+            }).click(function(e) {
+                e.preventDefault();
+            });
+        });
+        </script>        
+</div>
+                    
