@@ -1,0 +1,211 @@
+commit dc61d203571139eb5f1756b4d8b8f00927c8e68f
+Author: kyle kersey <kylelk@comcast.net>
+Date:   Wed Feb 5 19:28:03 2014 -0800
+
+    fixed form feild
+
+commit 956ba003a5c2a0fc3b158eb36b20fe83c59cc43e
+Author: kyle kersey <kylelk@comcast.net>
+Date:   Tue Feb 4 19:33:04 2014 -0800
+
+    added paste site demo
+
+commit 7499a7f868dfa8dc03756d95bfac64630f689fc6
+Author: kyle kersey <kylelk@comcast.net>
+Date:   Sun Jan 26 23:43:51 2014 -0800
+
+    new files
+
+commit c5bb2bdfe46f6c7b39539360eb4e38c536e9a710
+Author: kyle kersey <kylelk@comcast.net>
+Date:   Wed Jan 22 17:06:03 2014 -0800
+
+    added androidhelper documentation page
+
+commit f28fb78d1c24a40172a0c29de69caa6f30c3233f
+Author: kyle kersey <kylelk@comcast.net>
+Date:   Mon Jan 20 17:30:24 2014 -0800
+
+    moved folder
+
+commit ec81d84f944b8c1914ffd61f99337de782533085
+Author: kyle kersey <kylelk@comcast.net>
+Date:   Fri Jan 10 19:14:55 2014 -0800
+
+    QEdit doc
+
+commit 0bf1cb40b120b4f257e4b000d27efd51367027af
+Author: kyle kersey <kylelk@comcast.net>
+Date:   Thu Jan 9 19:13:32 2014 -0800
+
+    Removed boarder
+
+commit 172693c42b29e4c1e7aeaf9dab34ec7a38bc0325
+Author: kyle kersey <kylelk@comcast.net>
+Date:   Thu Jan 9 15:14:34 2014 -0800
+
+    General improvements
+
+commit 7af75bb100392cc7c8efc9a5d705ca802193bb69
+Author: kyle kersey <kylelk@comcast.net>
+Date:   Thu Jan 9 14:58:27 2014 -0800
+
+    Fixed create tool
+
+commit 94f59d6c30da3e59c4e8ea191cc7501836349aa3
+Author: kyle kersey <kylelk@comcast.net>
+Date:   Thu Jan 9 14:46:12 2014 -0800
+
+    updated demo
+
+commit 6b6a56cf9e0805680fa99ffcdd0e21c10e90d0ae
+Author: kyle kersey <kylelk@comcast.net>
+Date:   Thu Jan 9 14:42:14 2014 -0800
+
+    created demo
+
+commit c46c65c3061e2c13d3d30da25970ccaa048e548d
+Author: kyle kersey <kylelk@comcast.net>
+Date:   Wed Jan 8 16:42:55 2014 -0800
+
+    changes
+
+commit 176de04e74cfea2e64965450730c44bb78d1bb55
+Author: kyle kersey <kylelk@comcast.net>
+Date:   Wed Jan 8 16:40:11 2014 -0800
+
+    fixed bracket
+
+commit d952f112c656cfda3e3ef21d74411bde1f3707db
+Author: kyle kersey <kylelk@comcast.net>
+Date:   Wed Jan 8 16:39:06 2014 -0800
+
+    changed user agent detection
+
+commit 51e40878abf520a2e4bac67cf938ba6dc47e2c71
+Author: kyle kersey <kylelk@comcast.net>
+Date:   Wed Jan 8 16:35:59 2014 -0800
+
+    changed user agent detection
+
+commit 5f6dfb6513ee30e4a6fa0c048c289087c5f39af6
+Author: kyle kersey <kylelk@comcast.net>
+Date:   Wed Jan 8 16:22:59 2014 -0800
+
+    android detection page
+
+commit ad9b9137da76ea284b9870574cc30541d4a745ea
+Author: kyle kersey <kylelk@comcast.net>
+Date:   Wed Nov 20 19:28:33 2013 -0800
+
+    Update liveHTML.html
+
+commit 9a58dbf3572287837e209b1555d478ba94c4ecc8
+Author: kyle kersey <kylelk@comcast.net>
+Date:   Wed Nov 13 11:32:09 2013 -0800
+
+    Update index.html
+
+commit 4e38e420dca1efc809a09cd7fbf9c2bda6479a7b
+Author: kyle kersey <kylelk@comcast.net>
+Date:   Wed Nov 13 11:23:51 2013 -0800
+
+    Create liveHTML.html
+
+commit 6a050ae40adb3b16cf079bb7c80ac1d17164e0f1
+Author: kyle kersey <kylelk@comcast.net>
+Date:   Tue Nov 12 22:29:07 2013 -0800
+
+    Create test.html
+
+commit 979273c29495d08a05bbe6bae7a6dfd9346b4d18
+Author: kyle kersey <kylelk@comcast.net>
+Date:   Thu Nov 7 17:21:18 2013 -0800
+
+    Update index.html
+
+commit 7e0955af35acd6797eba662217df7d3fbf7cb83f
+Author: kyle kersey <kylelk@comcast.net>
+Date:   Thu Nov 7 16:50:59 2013 -0800
+
+    first commit
+    
+    Base64 Encoder
+
+commit 4fd2f9b2c742f3116558656cc1c47055737ecdcd
+Author: kyle kersey <kylelk@comcast.net>
+Date:   Wed Nov 6 20:08:40 2013 -0800
+
+    Update sha256.html
+
+commit aeb2c30ac3da1773dff23c0a650edb2cd62932b1
+Author: kyle kersey <kylelk@comcast.net>
+Date:   Wed Nov 6 20:02:45 2013 -0800
+
+    Delete styles.css
+
+commit 4dc32205890841f6604e26e1ead99a162edc55d0
+Author: kyle kersey <kylelk@comcast.net>
+Date:   Wed Nov 6 20:02:35 2013 -0800
+
+    Delete pygment_trac.css
+
+commit ba96064bcdcbe443febc9d838ddcf8108e4f76f3
+Author: kyle kersey <kylelk@comcast.net>
+Date:   Wed Nov 6 20:02:02 2013 -0800
+
+    Delete scale.fix.js
+
+commit a52c60eea7fde82f2d2efa231c6a6652b06387d3
+Author: kyle kersey <kylelk@comcast.net>
+Date:   Wed Nov 6 20:00:47 2013 -0800
+
+    Update sha256.html
+
+commit bc9cb274d92d38057b58041c48e629fb34da1246
+Author: kyle kersey <kylelk@comcast.net>
+Date:   Wed Nov 6 20:00:23 2013 -0800
+
+    Update sha256.html
+
+commit 9d65280ce4a7af98719024a285372b5728073019
+Author: kyle kersey <kylelk@comcast.net>
+Date:   Wed Nov 6 16:15:50 2013 -0800
+
+    Update sha256.html
+
+commit c269d1f90ff8f20a4cc1cefb6c25886542ad8f42
+Author: kyle kersey <kylelk@comcast.net>
+Date:   Wed Nov 6 16:14:42 2013 -0800
+
+    Create sha256.js
+
+commit da5d1fbc66b87b162bfc69345b6f80c104235e02
+Author: kyle kersey <kylelk@comcast.net>
+Date:   Wed Nov 6 16:13:26 2013 -0800
+
+    calculates sha256 hash
+
+commit 8798a8fd7486e12685a637929d4641bdd71afd51
+Author: kyle kersey <kylelk@comcast.net>
+Date:   Tue Nov 5 22:15:48 2013 -0800
+
+    Update index.html
+
+commit 670c3afc494e59d9ef3843f344176087183bf3d3
+Author: kyle kersey <kylelk@comcast.net>
+Date:   Tue Nov 5 22:02:13 2013 -0800
+
+    Create gh-pages branch via GitHub
+
+commit 0b1e1f9f1b4535f131d4a6c69780512f8008f603
+Author: kyle kersey <kylelk@comcast.net>
+Date:   Tue Nov 5 21:56:22 2013 -0800
+
+    Create index.html
+
+commit f6a08e172063dafa95d03c882b073687f9f30949
+Author: kyle kersey <kylelk@comcast.net>
+Date:   Tue Nov 5 21:42:07 2013 -0800
+
+    Initial commit
