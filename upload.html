@@ -78,3 +78,94 @@
     }
 </script>
 </html>
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <link href="http://ivaynberg.github.com/select2/select2-3.3.2/select2.css" rel="stylesheet" type="text/css" ></link>
+    <script src="http://ivaynberg.github.com/select2/select2-3.3.2/select2.js"></script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-48664735-1', 'kylelk.github.io');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<style>
+    .main-page {
+        background-color:#C0C0C0;
+    }
+    .paste-data{
+        width:80%;
+        margin-top:10px;
+        margin-bottom:10px;
+        margin-right:10%;
+        margin-left:10%;  
+    }
+    .paste-name {
+        margin-top:10px;
+        margin-bottom:10px;
+        margin-left:10%;  
+    }
+     .language {
+        width:200px;
+    }
+    .discription {
+        width:80%;
+        margin-top:10px;
+        margin-bottom:10px;
+        margin-right:10%;
+        margin-left:10%; 
+    }
+    .submit-button {
+        margin-left:10%;
+    }
+</style>
+<body class="main-page">
+    
+    <textarea class="paste-data"  id="paste-data" rows="30" title="content"></textarea>
+    
+    <input type="text" class="paste-name" id="name" placeholder="name" size="30" title="name"></input>
+    
+    <select id="language" class="language">
+        <option value="py">Python</option>
+        <option value="txt">Text</option>
+        <option value="c">C</option>
+        <option value="js">JavaScript</option>
+        <option value="java">Java</option>
+        <option value="sh">Bash</option>
+    </select>
+    
+    <textarea 
+              class="discription" 
+              id="discription" 
+              name="discription" 
+              rows="3" 
+              placeholder="discription" 
+              title="discription">
+    </textarea>
+    <button class="submit-button" onclick="createJSON()">Submit Code</button>
+
+</body>
+    <script src="json2.js"></script>
+<script>
+        $("#language").select2({
+        placeholder: "language",
+        allowClear: true
+    });
+    function createJSON(){
+        var properties = new Object();
+        properties.data = $('#paste-data').val();
+        properties.name = $('#name').val();
+        properties.language = $("#language").val();
+        properties.discription = $("#discription").val();
+        var paste_data_to_send = JSON.stringify(properties);
+        alert(paste_data_to_send);
+    }
+</script>
+</html>
