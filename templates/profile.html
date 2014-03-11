@@ -262,4 +262,279 @@
 <script>
    
 </script>
+</html><!DOCTYPE html>
+<html>
+<head>
+    <title>{{name}}</title>
+    <script src="/d3/d3.v3.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/templates/css/nav_bar.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+        <?php echo file_get_contents("bootstrap/js/bootstrap.min.js") ?>
+    </script>
+    <script type="text/javascript">
+
+      // https://developers.google.com/chart/interactive/docs/gallery/barchart#Configuration_Options
+         
+      // Load the Visualization API and the piechart package.
+      google.load('visualization', '1.0', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'occurrences');
+        data.addColumn('number', 'occurrences');
+        data.addRows( {{mentions-data}} );
+
+        // Set chart options
+        var options = {'title':'mentions',
+                       'width':1000,
+                       'height':300};
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.BarChart(document.getElementById('mentions-chart'));
+        chart.draw(data, options);
+        
+        var data1 = new google.visualization.DataTable();
+        data1.addColumn('string', 'occurrences');
+        data1.addColumn('number', 'occurrences');
+        data1.addRows( {{hashtags-data}} );
+
+        // Set chart options
+        var options1 = {'title':'hashtags',
+                       'width':1000,
+                       'height':300};
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart1 = new google.visualization.BarChart(document.getElementById('hashtags-chart'));
+        chart1.draw(data1, options1);
+          
+        // Instantiate and draw our chart, passing in some options.
+        var chart2 = new google.visualization.BarChart(document.getElementById('mentions-chart'));
+        chart.draw(data, options);
+        
+        var data2 = new google.visualization.DataTable();
+        data2.addColumn('string', 'words');
+        data2.addColumn('number', 'occurrences');
+        data2.addRows( {{other-words-data}} );
+
+        // Set chart options
+        var options2 = {'title':'other words',
+                       'width':1000,
+                       'height':500};
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart2 = new google.visualization.BarChart(document.getElementById('other-words-chart'));
+        chart2.draw(data2, options2);
+          
+        var tweet_times_data = new google.visualization.DataTable();
+        tweet_times_data.addColumn('string', 'tweets');
+        tweet_times_data.addColumn('number', 'tweets');
+        tweet_times_data.addRows( {{tweet times}} );
+
+        // Set chart options
+        var tweet_times_options = {'title':'tweet times',
+                                    'width':1000,
+                                    'height':750,
+                                  vAxis: {title: 'Hour'},
+                                  hAxis: {title: 'Number of tweets during hour'}};
+
+        // Instantiate and draw our chart, passing in some options.
+        var tweet_times_chart = new google.visualization.BarChart(document.getElementById('tweet-times-chart'));
+        tweet_times_chart.draw(tweet_times_data, tweet_times_options);
+          
+          {{other graphs js}}
+          
+      }
+    </script>
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-48664735-1', 'kylelk.github.io');
+ga('send', 'pageview');
+
+</script>
+</head>
+    
+<style>
+    .main-page {
+        background-image:url("{{background-image-url}}");
+        background-position: left 40px;
+        background-attachment: fixed;
+        background-repeat: repeat;
+        background-repeat: no-repeat;
+        background-color: {{profile_background_color}};
+    }
+    .profile-image-div {
+        width:100%;
+        text-align:center
+    }
+    .profile-image {
+        width:128px;
+        height:128px;
+         border:1px solid;
+        border-width:thick;
+    }
+    .user-discription {
+        text-align:center;
+        margin:auto;
+        background-color:white;
+    }
+    .basic-info {
+        min-height:175px;
+        width:80%;
+        margin-top:15px;
+        margin-bottom:15px;
+        margin-right:10%;
+        margin-left:10%;
+        background-color:white;
+        box-shadow: 5px 5px 5px #888888;
+        overflow:hidden;
+        border:1px solid;
+        border-width:thin;
+    }
+    .term-charts {
+        width:80%;
+        margin-top:15px;
+        margin-bottom:15px;
+        margin-right:10%;
+        margin-left:10%;
+        background-color:white;
+        box-shadow: 5px 5px 5px #888888;
+        overflow:hidden;
+        border:1px solid;
+        border-width:thin;
+    }
+    .tweet-times {
+        min-height:175px;
+        width:80%;
+        margin-top:15px;
+        margin-bottom:15px;
+        margin-right:10%;
+        margin-left:10%;
+        background-color:white;
+        box-shadow: 5px 5px 5px #888888;
+        overflow:hidden;
+        border:1px solid;
+        border-width:thin;
+    }
+    .database-info {
+        min-height:175px;
+        width:80%;
+        margin-top:15px;
+        margin-bottom:15px;
+        margin-right:10%;
+        margin-left:10%;
+        background-color:white;
+        box-shadow: 5px 5px 5px #888888;
+        overflow:hidden;
+        border:1px solid;
+        border-width:thin;
+    }
+    .info-section {
+        min-height:175px;
+        width:80%;
+        margin-top:15px;
+        margin-bottom:15px;
+        margin-right:10%;
+        margin-left:10%;
+        background-color:white;
+        box-shadow: 5px 5px 5px #888888;
+        overflow:hidden;
+        border:1px solid;
+        border-width:thin;
+    }
+    
+</style>
+<body>
+    <div id="nav">
+	<ul>
+		<li><a href="#">Following Grid</a></li>
+		<li><a href="#">Following Web</a></li>
+		<li><a href="#">Database</a></li>
+	</ul>
+    </div>
+    <div class="main-page">
+    <div class="background"></div>
+    <div id="wrapper" class="profile-image-div">
+        <img id="yourimage" class="profile-image" src="{{profile_image_url}}"></img>
+        <br>
+        <b class="user-discription">{{user-discription}}</b>
+    </div>
+    <div class="basic-info">
+        <h1 style="text-align:center;">Basic Info</h1>
+        <hr>
+        <ul>
+            <br>
+            <li><b>screen_name: </b>{{screen-name}}</li>
+            <br>
+            <li><b>name: </b>{{name}}</li>
+            <br>
+            <li><b>followers_count: </b>{{followers_count}}</li>
+            <br>
+            <li><b>friends_count: </b>{{friends_count}}</li>
+            <br>
+            <li><b>statuses_count: </b>{{statuses_count}}</li>
+            <br>
+            <li><b>favourites_count: </b>{{favourites_count}}</li>
+            <br>
+            <li><b>verified: </b>{{verified}}</li>
+            <br>
+            <li><b>time_zone: </b>{{time_zone}}</li>
+            <br>
+        </ul>
+    </div>
+    <div class="term-charts">
+        <h1 style="text-align:center;">Terms used</h1>
+        <hr>
+        <h3 style="text-align:center;">Mentions</h3>
+        <div id="mentions-chart"></div>
+        <hr>
+        <h3 style="text-align:center;">Hashtags</h3>
+        <div id="hashtags-chart"></div>
+        <hr>
+        <h3 style="text-align:center;">Other Words</h3>
+        <div id="other-words-chart"></div>
+    </div>
+    
+    <div class="tweet-times">
+         <h1 style="text-align:center;">Tweets by Hour</h1>
+        <hr>
+        <div id="tweet-times-chart"></div>
+    </div>
+    
+    {{other graphs div}}
+    
+    <div class="database-info">
+         <h1 style="text-align:center;">Database Info</h1>
+        <hr>
+        <br>
+        <b>Number of files: </b>{{number of files in database}}
+        <br>
+        <br>
+       <form enctype="multipart/form-data" method="post">
+        <input type="hidden" name="screen_name" value="{{screen-name}}" /><br>
+        <input type="submit" value="Update Database" />
+        </form>
+    </div>
+    </div>
+</body>
+<script>
+   
+</script>
 </html>
